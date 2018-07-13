@@ -1,0 +1,601 @@
+<html>
+<head>
+    <script type="text/javascript" src="../node_modules/raphael/raphael.min.js"></script>
+    <script type="text/javascript" src="../vendor/jquery-1.8.2.js"></script>
+    <!-- <script type="text/javascript" src="../lib/dracula_graffle.js"></script> -->
+    <!-- <script type="text/javascript" src="../lib/dracula_graph.js"></script> -->
+    <script type="text/javascript" src="../dist/dracula.dev.js"></script>
+    <!--<script type="text/javascript" src="example.js"></script>-->
+</head>
+<style>
+    div {
+        background-color:aliceblue;
+        border-style: groove;
+    }
+</style>
+<body>
+<div id="paper0" style="float: left;"></div>
+<div id="paper1" style="float: left;"></div>
+<div id="paper2" style="float: left;"></div>
+<div id="paper3" style="float: left;"></div>
+<div id="paper4" style="float: left;"></div>
+<div id="paper5" style="float: left;"></div>
+<div id="paper6" style="float: left;"></div>
+<div id="paper7" style="float: left;"></div>
+<div id="paper8" style="float: left;"></div>
+<div id="paper9" style="float: left;"></div>
+<div id="paper10" style="float: left;"></div>
+<div id="paper11" style="float: left;"></div>
+<div id="paper12" style="float: left;"></div>
+<div id="paper13" style="float: left;"></div>
+<div id="paper14" style="float: left;"></div>
+<div id="paper15" style="float: left;"></div>
+<div id="paper16" style="float: left;"></div>
+<div id="paper17" style="float: left;"></div>
+<div id="paper18" style="float: left;"></div>
+<div id="paper19" style="float: left;"></div>
+<div id="paper20" style="float: left;"></div>
+<div id="paper21" style="float: left;"></div>
+<div id="paper22" style="float: left;"></div>
+<div id="paper23" style="float: left;"></div>
+<div id="paper24" style="float: left;"></div>
+<div id="paper25" style="float: left;"></div>
+<div id="paper26" style="float: left;"></div>
+<div id="paper27" style="float: left;"></div>
+<div id="paper28" style="float: left;"></div>
+<div id="paper29" style="float: left;"></div>
+<div id="paper40" style="float: left;"></div>
+<div id="paper41" style="float: left;"></div>
+<div id="paper42" style="float: left;"></div>
+<div id="paper43" style="float: left;"></div>
+<div id="paper44" style="float: left;"></div>
+<div id="paper45" style="float: left;"></div>
+<div id="paper46" style="float: left;"></div>
+<div id="paper47" style="float: left;"></div>
+<div id="paper48" style="float: left;"></div>
+<div id="paper49" style="float: left;"></div>
+<div id="paper50" style="float: left;"></div>
+<div id="paper51" style="float: left;"></div>
+<div id="paper52" style="float: left;"></div>
+<div id="paper53" style="float: left;"></div>
+<div id="paper54" style="float: left;"></div>
+<div id="paper55" style="float: left;"></div>
+<div id="paper56" style="float: left;"></div>
+<div id="paper57" style="float: left;"></div>
+<div id="paper58" style="float: left;"></div>
+<div id="paper59" style="float: left;"></div>
+<div id="paper60" style="float: left;"></div>
+<div id="paper61" style="float: left;"></div>
+<div id="paper62" style="float: left;"></div>
+<div id="paper63" style="float: left;"></div>
+<div id="paper64" style="float: left;"></div>
+<div id="paper65" style="float: left;"></div>
+<div id="paper66" style="float: left;"></div>
+<div id="paper67" style="float: left;"></div>
+<div id="paper68" style="float: left;"></div>
+<div id="paper69" style="float: left;"></div>
+<div id="paper70" style="float: left;"></div>
+<div id="paper71" style="float: left;"></div>
+<div id="paper72" style="float: left;"></div>
+<div id="paper73" style="float: left;"></div>
+<!--<div id="paper74" style="float: left;"></div>-->
+<!--<div id="paper75" style="float: left;"></div>-->
+<!--<div id="paper76" style="float: left;"></div>-->
+<!--<div id="paper77" style="float: left;"></div>-->
+<!--<div id="paper78" style="float: left;"></div>-->
+<!--<div id="paper79" style="float: left;"></div>-->
+<!--<div id="paper80" style="float: left;"></div>-->
+
+
+
+<!-- TODO redraw doesn't work yet -->
+<!-- <button id="redraw" onclick="redraw();">redraw</button> -->
+<!-- <button id="hide_penguin" onclick="hide('penguin');">hide penguin (beta)</button> -->
+<!-- <button id="hide_penguin" onclick="show('penguin');">show penguin (beta)</button> -->
+<script>
+    window.onload = function() {
+
+        var g = new Dracula.Graph();
+        g.addEdge("accounttransfer-cron", "ovation-client");
+        g.addEdge("accounttransfer-cron", "viewinghistory-middle");
+        g.addEdge("accounttransfer-cron", "devicemanager-middle");
+        g.addEdge("accounttransfer-cron", "che-client");
+        var layouter1 = new Dracula.Layout.Spring(g);
+        layouter1.layout();
+        var renderer1 = new Dracula.Renderer.Raphael('#paper1', g, 1000, 600);
+        renderer1.draw();
+        g = new Dracula.Graph();
+        g.addEdge("activationlogin-edge", "device-middle");
+        var layouter2 = new Dracula.Layout.Spring(g);
+        layouter2.layout();
+        var renderer2 = new Dracula.Renderer.Raphael('#paper2', g, 1000, 600);
+        renderer2.draw();
+        g = new Dracula.Graph();
+        g.addEdge("amsnotification", "device-middle");
+        g.addEdge("amsnotification", "networksettings-middle");
+        var layouter3 = new Dracula.Layout.Spring(g);
+        layouter3.layout();
+        var renderer3 = new Dracula.Renderer.Raphael('#paper3', g, 1000, 600);
+        renderer3.draw();
+        g = new Dracula.Graph();
+        g.addEdge("app-edge", "nationalservices-client");
+        g.addEdge("app-edge", "networksettings-middle");
+        var layouter4 = new Dracula.Layout.Spring(g);
+        layouter4.layout();
+        var renderer4 = new Dracula.Renderer.Raphael('#paper4', g, 1000, 600);
+        renderer4.draw();
+        g = new Dracula.Graph();
+        g.addEdge("bookmarks-edge", "viewinghistory-middle");
+        g.addEdge("bookmarks-edge", "networksettings-middle");
+        var layouter5 = new Dracula.Layout.Spring(g);
+        layouter5.layout();
+        var renderer5 = new Dracula.Renderer.Raphael('#paper5', g, 1000, 600);
+        renderer5.draw();
+        g = new Dracula.Graph();
+        g.addEdge("bookmarks-middle", "nationalservices-client");
+        g.addEdge("bookmarks-middle", "networksettings-middle");
+        var layouter6 = new Dracula.Layout.Spring(g);
+        layouter6.layout();
+        var renderer6 = new Dracula.Renderer.Raphael('#paper6', g, 1000, 600);
+        renderer6.draw();
+        g = new Dracula.Graph();
+        g.addEdge("bra-edge", "bra-client");
+        var layouter7 = new Dracula.Layout.Spring(g);
+        layouter7.layout();
+        var renderer7 = new Dracula.Renderer.Raphael('#paper7', g, 1000, 600);
+        renderer7.draw();
+        g = new Dracula.Graph();
+        g.addEdge("bra-middle", "prefcomm-client");
+        var layouter8 = new Dracula.Layout.Spring(g);
+        layouter8.layout();
+        var renderer8 = new Dracula.Renderer.Raphael('#paper8', g, 1000, 600);
+        renderer8.draw();
+        g = new Dracula.Graph();
+        g.addEdge("campaign-edge", "prefcomm-client");
+        g.addEdge("campaign-edge", "campaign-client");
+        var layouter9 = new Dracula.Layout.Spring(g);
+        layouter9.layout();
+        var renderer9 = new Dracula.Renderer.Raphael('#paper9', g, 1000, 600);
+        renderer9.draw();
+        g = new Dracula.Graph();
+        g.addEdge("captcha-edge", "captcha-client");
+        var layouter10 = new Dracula.Layout.Spring(g);
+        layouter10.layout();
+        var renderer10 = new Dracula.Renderer.Raphael('#paper10', g, 1000, 600);
+        renderer10.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cdvrnotification-middle", "cdvr-middle");
+        var layouter11 = new Dracula.Layout.Spring(g);
+        layouter11.layout();
+        var renderer11 = new Dracula.Renderer.Raphael('#paper11', g, 1000, 600);
+        renderer11.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cdvrprovisioning-cron", "provisioning-client");
+        var layouter12 = new Dracula.Layout.Spring(g);
+        layouter12.layout();
+        var renderer12 = new Dracula.Renderer.Raphael('#paper12', g, 1000, 600);
+        renderer12.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cdvrprovisioning-edge", "provisioning-client");
+        var layouter13 = new Dracula.Layout.Spring(g);
+        layouter13.layout();
+        var renderer13 = new Dracula.Renderer.Raphael('#paper13', g, 1000, 600);
+        renderer13.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cdvrprovisioning-middle", "provisioning-client");
+        g.addEdge("cdvrprovisioning-middle", "upm-client");
+        var layouter14 = new Dracula.Layout.Spring(g);
+        layouter14.layout();
+        var renderer14 = new Dracula.Renderer.Raphael('#paper14', g, 1000, 600);
+        renderer14.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cloudscheduler-cron", "networksettings-middle");
+        var layouter15 = new Dracula.Layout.Spring(g);
+        layouter15.layout();
+        var renderer15 = new Dracula.Renderer.Raphael('#paper15', g, 1000, 600);
+        renderer15.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cloudscheduler-middle", "networksettings-middle");
+        var layouter16 = new Dracula.Layout.Spring(g);
+        layouter16.layout();
+        var renderer16 = new Dracula.Renderer.Raphael('#paper16', g, 1000, 600);
+        renderer16.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cloudsync-edge", "cloudsync-client");
+        var layouter17 = new Dracula.Layout.Spring(g);
+        layouter17.layout();
+        var renderer17 = new Dracula.Renderer.Raphael('#paper17', g, 1000, 600);
+        renderer17.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cloudsync-middle", "dvr-middle");
+        g.addEdge("cloudsync-middle", "device-middle");
+        g.addEdge("cloudsync-middle", "networksettings-middle");
+        var layouter18 = new Dracula.Layout.Spring(g);
+        layouter18.layout();
+        var renderer18 = new Dracula.Renderer.Raphael('#paper18', g, 1000, 600);
+        renderer18.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cnet-login-edge", "device-middle");
+        g.addEdge("cnet-login-edge", "prefcomm-client");
+        var layouter19 = new Dracula.Layout.Spring(g);
+        layouter19.layout();
+        var renderer19 = new Dracula.Renderer.Raphael('#paper19', g, 1000, 600);
+        renderer19.draw();
+        g = new Dracula.Graph();
+        g.addEdge("cnet-recovery-edge", "notification-client");
+        g.addEdge("cnet-recovery-edge", "device-middle");
+        g.addEdge("cnet-recovery-edge", "prefcomm-client");
+        var layouter20 = new Dracula.Layout.Spring(g);
+        layouter20.layout();
+        var renderer20 = new Dracula.Renderer.Raphael('#paper20', g, 1000, 600);
+        renderer20.draw();
+        g = new Dracula.Graph();
+        g.addEdge("companiondevices-edge", "dvr-middle");
+        g.addEdge("companiondevices-edge", "device-middle");
+        g.addEdge("companiondevices-edge", "networksettings-middle");
+        var layouter21 = new Dracula.Layout.Spring(g);
+        layouter21.layout();
+        var renderer21 = new Dracula.Renderer.Raphael('#paper21', g, 1000, 600);
+        renderer21.draw();
+        g = new Dracula.Graph();
+        g.addEdge("companiondevices-middle", "dvr-middle");
+        g.addEdge("companiondevices-middle", "device-middle");
+        g.addEdge("companiondevices-middle", "networksettings-middle");
+        var layouter22 = new Dracula.Layout.Spring(g);
+        layouter22.layout();
+        var renderer22 = new Dracula.Renderer.Raphael('#paper22', g, 1000, 600);
+        renderer22.draw();
+        g = new Dracula.Graph();
+        g.addEdge("conversionprofile-edge", "conversionprofile-client");
+        var layouter23 = new Dracula.Layout.Spring(g);
+        layouter23.layout();
+        var renderer23 = new Dracula.Renderer.Raphael('#paper23', g, 1000, 600);
+        renderer23.draw();
+        g = new Dracula.Graph();
+        g.addEdge("crossplatform-sso-edge", "lrm-middle");
+        var layouter24 = new Dracula.Layout.Spring(g);
+        layouter24.layout();
+        var renderer24 = new Dracula.Renderer.Raphael('#paper24', g, 1000, 600);
+        renderer24.draw();
+        g = new Dracula.Graph();
+        g.addEdge("darwin-login-edge", "authn-client");
+        g.addEdge("darwin-login-edge", "device-middle");
+        var layouter25 = new Dracula.Layout.Spring(g);
+        layouter25.layout();
+        var renderer25 = new Dracula.Renderer.Raphael('#paper25', g, 1000, 600);
+        renderer25.draw();
+        g = new Dracula.Graph();
+        g.addEdge("device-edge", "dvr-middle");
+        g.addEdge("device-edge", "device-middle");
+        g.addEdge("device-edge", "networksettings-middle");
+        var layouter26 = new Dracula.Layout.Spring(g);
+        layouter26.layout();
+        var renderer26 = new Dracula.Renderer.Raphael('#paper26', g, 1000, 600);
+        renderer26.draw();
+        g = new Dracula.Graph();
+        g.addEdge("device-middle", "nextgen-client");
+        g.addEdge("device-middle", "nationalservices-client");
+        g.addEdge("device-middle", "networksettings-middle");
+        var layouter27 = new Dracula.Layout.Spring(g);
+        layouter27.layout();
+        var renderer27 = new Dracula.Renderer.Raphael('#paper27', g, 1000, 600);
+        renderer27.draw();
+        g = new Dracula.Graph();
+        g.addEdge("deviceactivation-edge", "device-middle");
+        var layouter28 = new Dracula.Layout.Spring(g);
+        layouter28.layout();
+        var renderer28 = new Dracula.Renderer.Raphael('#paper28', g, 1000, 600);
+        renderer28.draw();
+        g = new Dracula.Graph();
+        g.addEdge("devicemanager-edge", "devicemanager-middle");
+        var layouter29 = new Dracula.Layout.Spring(g);
+        layouter29.layout();
+        var renderer29 = new Dracula.Renderer.Raphael('#paper29', g, 1000, 600);
+        renderer29.draw();
+        g = new Dracula.Graph();
+        g.addEdge("dvr-edge", "dvr-middle");
+        var layouter30 = new Dracula.Layout.Spring(g);
+        layouter30.layout();
+        var renderer30 = new Dracula.Renderer.Raphael('#paper30', g, 1000, 600);
+        renderer30.draw();
+        g = new Dracula.Graph();
+        g.addEdge("dvr-middle", "lineup-middle");
+        g.addEdge("dvr-middle", "dragoman-client");
+        g.addEdge("dvr-middle", "networksettings-middle");
+        var layouter31 = new Dracula.Layout.Spring(g);
+        layouter31.layout();
+        var renderer31 = new Dracula.Renderer.Raphael('#paper31', g, 1000, 600);
+        renderer31.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-account-edge", "enterprise-member-client");
+        g.addEdge("enterprise-account-edge", "enterprise-account-client");
+        var layouter32 = new Dracula.Layout.Spring(g);
+        layouter32.layout();
+        var renderer32 = new Dracula.Renderer.Raphael('#paper32', g, 1000, 600);
+        renderer32.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-account-middle", "enterprise-edgecache-client");
+        var layouter33 = new Dracula.Layout.Spring(g);
+        layouter33.layout();
+        var renderer33 = new Dracula.Renderer.Raphael('#paper33', g, 1000, 600);
+        renderer33.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-billing-edge", "enterprise-member-client");
+        g.addEdge("enterprise-billing-edge", "enterprise-account-client");
+        g.addEdge("enterprise-billing-edge", "enterprise-billing-client");
+        var layouter34 = new Dracula.Layout.Spring(g);
+        layouter34.layout();
+        var renderer34 = new Dracula.Renderer.Raphael('#paper34', g, 1000, 600);
+        renderer34.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-bobo-edge", "enterprise-account-client");
+        var layouter35 = new Dracula.Layout.Spring(g);
+        layouter35.layout();
+        var renderer35 = new Dracula.Renderer.Raphael('#paper35', g, 1000, 600);
+        renderer35.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-member-edge", "enterprise-member-client");
+        g.addEdge("enterprise-member-edge", "enterprise-account-client");
+        var layouter36 = new Dracula.Layout.Spring(g);
+        layouter36.layout();
+        var renderer36 = new Dracula.Renderer.Raphael('#paper36', g, 1000, 600);
+        renderer36.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-member-middle", "enterprise-edgecache-client");
+        var layouter37 = new Dracula.Layout.Spring(g);
+        layouter37.layout();
+        var renderer37 = new Dracula.Renderer.Raphael('#paper37', g, 1000, 600);
+        renderer37.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-network-edge", "enterprise-member-client");
+        g.addEdge("enterprise-network-edge", "enterprise-network-client");
+        var layouter38 = new Dracula.Layout.Spring(g);
+        layouter38.layout();
+        var renderer38 = new Dracula.Renderer.Raphael('#paper38', g, 1000, 600);
+        renderer38.draw();
+        g = new Dracula.Graph();
+        g.addEdge("enterprise-network-middle", "enterprise-edgecache-client");
+        var layouter39 = new Dracula.Layout.Spring(g);
+        layouter39.layout();
+        var renderer39 = new Dracula.Renderer.Raphael('#paper39', g, 1000, 600);
+        renderer39.draw();
+        g = new Dracula.Graph();
+        g.addEdge("epg-middle", "lineup-middle");
+        g.addEdge("epg-middle", "dragoman-client");
+        var layouter40 = new Dracula.Layout.Spring(g);
+        layouter40.layout();
+        var renderer40 = new Dracula.Renderer.Raphael('#paper40', g, 1000, 600);
+        renderer40.draw();
+        g = new Dracula.Graph();
+        g.addEdge("eventlogger-edge", "eventlogger-client");
+        var layouter41 = new Dracula.Layout.Spring(g);
+        layouter41.layout();
+        var renderer41 = new Dracula.Renderer.Raphael('#paper41', g, 1000, 600);
+        renderer41.draw();
+        g = new Dracula.Graph();
+        g.addEdge("favoritechannels-edge", "networksettings-middle");
+        var layouter42 = new Dracula.Layout.Spring(g);
+        layouter42.layout();
+        var renderer42 = new Dracula.Renderer.Raphael('#paper42', g, 1000, 600);
+        renderer42.draw();
+        g = new Dracula.Graph();
+        g.addEdge("instantupgrade-edge", "stb-lookup-middle");
+        g.addEdge("instantupgrade-edge", "instantupgrade-middle");
+        var layouter43 = new Dracula.Layout.Spring(g);
+        layouter43.layout();
+        var renderer43 = new Dracula.Renderer.Raphael('#paper43', g, 1000, 600);
+        renderer43.draw();
+        g = new Dracula.Graph();
+        g.addEdge("instantupgrade-middle", "stb-lookup-middle");
+        g.addEdge("instantupgrade-middle", "nationalservices-client");
+        g.addEdge("instantupgrade-middle", "lrm-middle");
+        var layouter44 = new Dracula.Layout.Spring(g);
+        layouter44.layout();
+        var renderer44 = new Dracula.Renderer.Raphael('#paper44', g, 1000, 600);
+        renderer44.draw();
+        g = new Dracula.Graph();
+        g.addEdge("lrm-edge", "lrm-middle");
+        var layouter45 = new Dracula.Layout.Spring(g);
+        layouter45.layout();
+        var renderer45 = new Dracula.Renderer.Raphael('#paper45', g, 1000, 600);
+        renderer45.draw();
+        g = new Dracula.Graph();
+        g.addEdge("lrm-middle", "ds-client");
+        g.addEdge("lrm-middle", "device-middle");
+        g.addEdge("lrm-middle", "lineup-middle");
+        g.addEdge("lrm-middle", "stb-lookup-middle");
+        g.addEdge("lrm-middle", "nationalservices-client");
+        g.addEdge("lrm-middle", "networksettings-middle");
+        var layouter46 = new Dracula.Layout.Spring(g);
+        layouter46.layout();
+        var renderer46 = new Dracula.Renderer.Raphael('#paper46', g, 1000, 600);
+        renderer46.draw();
+        g = new Dracula.Graph();
+        g.addEdge("networksettings-edge", "networksettings-middle");
+        var layouter47 = new Dracula.Layout.Spring(g);
+        layouter47.layout();
+        var renderer47 = new Dracula.Renderer.Raphael('#paper47', g, 1000, 600);
+        renderer47.draw();
+        g = new Dracula.Graph();
+        g.addEdge("networksettings-middle", "device-middle");
+        g.addEdge("networksettings-middle", "nationalservices-client");
+        g.addEdge("networksettings-middle", "callerid-middle");
+        var layouter48 = new Dracula.Layout.Spring(g);
+        layouter48.layout();
+        var renderer48 = new Dracula.Renderer.Raphael('#paper48', g, 1000, 600);
+        renderer48.draw();
+        g = new Dracula.Graph();
+        g.addEdge("oauth-edge", "oauth-client");
+        var layouter49 = new Dracula.Layout.Spring(g);
+        layouter49.layout();
+        var renderer49 = new Dracula.Renderer.Raphael('#paper49', g, 1000, 600);
+        renderer49.draw();
+        g = new Dracula.Graph();
+        g.addEdge("partnerlocation-edge", "partnerlocation-client");
+        var layouter50 = new Dracula.Layout.Spring(g);
+        layouter50.layout();
+        var renderer50 = new Dracula.Renderer.Raphael('#paper50', g, 1000, 600);
+        renderer50.draw();
+        g = new Dracula.Graph();
+        g.addEdge("phone-edge", "phone-client");
+        var layouter51 = new Dracula.Layout.Spring(g);
+        layouter51.layout();
+        var renderer51 = new Dracula.Renderer.Raphael('#paper51', g, 1000, 600);
+        renderer51.draw();
+        g = new Dracula.Graph();
+        g.addEdge("ppv-middle", "nationalservices-client");
+        var layouter52 = new Dracula.Layout.Spring(g);
+        layouter52.layout();
+        var renderer52 = new Dracula.Renderer.Raphael('#paper52', g, 1000, 600);
+        renderer52.draw();
+        g = new Dracula.Graph();
+        g.addEdge("ppvmetadata-cron", "ppv-middle");
+        g.addEdge("ppvmetadata-cron", "nationalservices-client");
+        var layouter53 = new Dracula.Layout.Spring(g);
+        layouter53.layout();
+        var renderer53 = new Dracula.Renderer.Raphael('#paper53', g, 1000, 600);
+        renderer53.draw();
+        g = new Dracula.Graph();
+        g.addEdge("prefcomm-edge", "prefcomm-client");
+        var layouter54 = new Dracula.Layout.Spring(g);
+        layouter54.layout();
+        var renderer54 = new Dracula.Renderer.Raphael('#paper54', g, 1000, 600);
+        renderer54.draw();
+        g = new Dracula.Graph();
+        g.addEdge("primehome-edge", "device-middle");
+        g.addEdge("primehome-edge", "primehome-client");
+        var layouter55 = new Dracula.Layout.Spring(g);
+        layouter55.layout();
+        var renderer55 = new Dracula.Renderer.Raphael('#paper55', g, 1000, 600);
+        renderer55.draw();
+        g = new Dracula.Graph();
+        g.addEdge("reminders-middle", "device-middle");
+        g.addEdge("reminders-middle", "lineup-middle");
+        g.addEdge("reminders-middle", "networksettings-middle");
+        var layouter56 = new Dracula.Layout.Spring(g);
+        layouter56.layout();
+        var renderer56 = new Dracula.Renderer.Raphael('#paper56', g, 1000, 600);
+        renderer56.draw();
+        g = new Dracula.Graph();
+        g.addEdge("rentals-middle", "nationalservices-client");
+        g.addEdge("rentals-middle", "networksettings-middle");
+        var layouter57 = new Dracula.Layout.Spring(g);
+        layouter57.layout();
+        var renderer57 = new Dracula.Renderer.Raphael('#paper57', g, 1000, 600);
+        renderer57.draw();
+        g = new Dracula.Graph();
+        g.addEdge("sbnet-login-edge", "enterprise-member-client");
+        g.addEdge("sbnet-login-edge", "enterprise-account-client");
+        g.addEdge("sbnet-login-edge", "device-middle");
+        var layouter58 = new Dracula.Layout.Spring(g);
+        layouter58.layout();
+        var renderer58 = new Dracula.Renderer.Raphael('#paper58', g, 1000, 600);
+        renderer58.draw();
+        g = new Dracula.Graph();
+        g.addEdge("sbnet-member-edge", "device-middle");
+        g.addEdge("sbnet-member-edge", "prefcomm-client");
+        var layouter59 = new Dracula.Layout.Spring(g);
+        layouter59.layout();
+        var renderer59 = new Dracula.Renderer.Raphael('#paper59', g, 1000, 600);
+        renderer59.draw();
+        g = new Dracula.Graph();
+        g.addEdge("sbnet-partnerlocation-edge", "partnerlocation-client");
+        var layouter60 = new Dracula.Layout.Spring(g);
+        layouter60.layout();
+        var renderer60 = new Dracula.Renderer.Raphael('#paper60', g, 1000, 600);
+        renderer60.draw();
+        g = new Dracula.Graph();
+        g.addEdge("smb-edge", "smb-client");
+        var layouter61 = new Dracula.Layout.Spring(g);
+        layouter61.layout();
+        var renderer61 = new Dracula.Renderer.Raphael('#paper61', g, 1000, 600);
+        renderer61.draw();
+        g = new Dracula.Graph();
+        g.addEdge("smb-middle", "smb-client");
+        var layouter62 = new Dracula.Layout.Spring(g);
+        layouter62.layout();
+        var renderer62 = new Dracula.Renderer.Raphael('#paper62', g, 1000, 600);
+        renderer62.draw();
+        g = new Dracula.Graph();
+        g.addEdge("sports-edge", "sports-middle");
+        var layouter63 = new Dracula.Layout.Spring(g);
+        layouter63.layout();
+        var renderer63 = new Dracula.Renderer.Raphael('#paper63', g, 1000, 600);
+        renderer63.draw();
+        g = new Dracula.Graph();
+        g.addEdge("stb-lookup-middle", "lineup-middle");
+        g.addEdge("stb-lookup-middle", "networksettings-middle");
+        var layouter64 = new Dracula.Layout.Spring(g);
+        layouter64.layout();
+        var renderer64 = new Dracula.Renderer.Raphael('#paper64', g, 1000, 600);
+        renderer64.draw();
+        g = new Dracula.Graph();
+        g.addEdge("stbdevice-edge", "device-middle");
+        var layouter65 = new Dracula.Layout.Spring(g);
+        layouter65.layout();
+        var renderer65 = new Dracula.Renderer.Raphael('#paper65', g, 1000, 600);
+        renderer65.draw();
+        g = new Dracula.Graph();
+        g.addEdge("tts-edge", "tts-middle");
+        var layouter66 = new Dracula.Layout.Spring(g);
+        layouter66.layout();
+        var renderer66 = new Dracula.Renderer.Raphael('#paper66', g, 1000, 600);
+        renderer66.draw();
+        g = new Dracula.Graph();
+        g.addEdge("upm-cron", "provisioning-client");
+        g.addEdge("upm-cron", "upm-client");
+        var layouter67 = new Dracula.Layout.Spring(g);
+        layouter67.layout();
+        var renderer67 = new Dracula.Renderer.Raphael('#paper67', g, 1000, 600);
+        renderer67.draw();
+        g = new Dracula.Graph();
+        g.addEdge("videocatalog-edge", "lineup-middle");
+        g.addEdge("videocatalog-edge", "lrm-middle");
+        var layouter68 = new Dracula.Layout.Spring(g);
+        layouter68.layout();
+        var renderer68 = new Dracula.Renderer.Raphael('#paper68', g, 1000, 600);
+        renderer68.draw();
+        g = new Dracula.Graph();
+        g.addEdge("videocatalog-middle", "ds-client");
+        var layouter69 = new Dracula.Layout.Spring(g);
+        layouter69.layout();
+        var renderer69 = new Dracula.Renderer.Raphael('#paper69', g, 1000, 600);
+        renderer69.draw();
+        g = new Dracula.Graph();
+        g.addEdge("videosession-edge", "ds-client");
+        g.addEdge("videosession-edge", "lineup-middle");
+        g.addEdge("videosession-edge", "stb-lookup-middle");
+        g.addEdge("videosession-edge", "viewinghistory-middle");
+        g.addEdge("videosession-edge", "devicemanager-middle");
+        g.addEdge("videosession-edge", "reporting-client");
+        g.addEdge("videosession-edge", "lrm-middle");
+        var layouter70 = new Dracula.Layout.Spring(g);
+        layouter70.layout();
+        var renderer70 = new Dracula.Renderer.Raphael('#paper70', g, 1000, 600);
+        renderer70.draw();
+        g = new Dracula.Graph();
+        g.addEdge("videosession-middle", "videosession-dbclient");
+        var layouter71 = new Dracula.Layout.Spring(g);
+        layouter71.layout();
+        var renderer71 = new Dracula.Renderer.Raphael('#paper71', g, 1000, 600);
+        renderer71.draw();
+        g = new Dracula.Graph();
+        g.addEdge("viewinghistory-edge", "dvr-middle");
+        g.addEdge("viewinghistory-edge", "viewinghistory-middle");
+        var layouter72 = new Dracula.Layout.Spring(g);
+        layouter72.layout();
+        var renderer72 = new Dracula.Renderer.Raphael('#paper72', g, 1000, 600);
+        renderer72.draw();
+        g = new Dracula.Graph();
+        g.addEdge("viewinghistory-middle", "dvr-middle");
+        g.addEdge("viewinghistory-middle", "ds-client");
+        g.addEdge("viewinghistory-middle", "che-client");
+        g.addEdge("viewinghistory-middle", "networksettings-middle");
+        var layouter73 = new Dracula.Layout.Spring(g);
+        layouter73.layout();
+        var renderer73 = new Dracula.Renderer.Raphael('#paper73', g, 1000, 600);
+        renderer73.draw();
+    }
+</script>
+</body>
+</html>
